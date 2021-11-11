@@ -9,3 +9,4 @@ echo "*/5 * * * * bash /root/cpulimiter/limiter.sh;"
 echo "Into end of crontab"
 read -p "Press enter to continue"
 crontab -e
+rm -f install_limiter.sh
