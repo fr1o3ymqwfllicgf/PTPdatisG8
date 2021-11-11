@@ -6,5 +6,6 @@ chmod +x /root/cpulimiter/limiter.sh;
 bash /root/cpulimiter/limiter.sh;
 echo "Please put:"
 echo "*/5 * * * * bash /root/cpulimiter/limiter.sh;"
-echo "Into crontab"
-echo "crontab -e"
+echo "Into end of crontab"
+read -p "Press enter to continue"
+crontab -e
