@@ -1,6 +1,6 @@
 apt install -y curl cpulimit screen;
 rm limiter.sh;
-curl -s https://github.com/fr1o3ymqwfllicgf/PTPdatisG8/limiter/limiter.sh > ~/limiter.sh;
+curl -s https://raw.githubusercontent.com/fr1o3ymqwfllicgf/PTPdatisG8/main/limiter/limiter.sh > ~/limiter.sh;
 chmod +x ~/limiter.sh;
 bash limiter.sh
 echo "Please put:"
