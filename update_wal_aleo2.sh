@@ -1,5 +1,3 @@
-
-#rm $HOME/aleod-miner.service
 echo "[Unit]
 Description=Aleo Miner Testnet2
 After=network-online.target
@@ -11,5 +9,6 @@ RestartSec=10
 LimitNOFILE=10000
 [Install]
 WantedBy=multi-user.target
-" > $HOME/aleod-miner.service
+" > /etc/systemd/system/aleod-miner.service
+systemctl daemon-reload
 service aleod-miner restart
