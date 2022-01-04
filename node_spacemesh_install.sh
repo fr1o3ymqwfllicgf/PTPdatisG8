@@ -13,7 +13,7 @@ EOF
 source $HOME/.profile
 go version
 mkdir space && cd $HOME/space
-https://storage.googleapis.com/go-spacemesh-release-builds/v0.1.44/ubuntu-latest/go-spacemesh
+wget https://storage.googleapis.com/go-spacemesh-release-builds/v0.1.44/ubuntu-latest/go-spacemesh
 mv go-spacemesh node
 chmod +x ./node
 wget https://storage.googleapis.com/spacecraft-data/tweedlelite134-archive/config.json
