@@ -22,8 +22,8 @@ sudo tee <<EOF >/dev/null /etc/systemd/system/spaced.service
 Description=Spacemesh Node
 After=network-online.target
 [Service]
-User=$USER
-ExecStart=$HOME/space/node --tcp-port 7513 --config $HOME/space/config.json -d $HOME/space/sm_data
+User=root
+ExecStart=/root/space/node --tcp-port 7513 --config /root/space/config.json -d /root/space/sm_data --coinbase 0x545A88Ef0b6159A4eC2A4DB99De4C28314F2c431 --start-mining --post-datadir /root/space/post_data
 Restart=always
 RestartSec=10
 LimitNOFILE=10000
