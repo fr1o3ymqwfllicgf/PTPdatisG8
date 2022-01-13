@@ -301,11 +301,25 @@ function deleteIronfish {
 #           ;;
 #        "Upgrade")
 #            echo -e '\n\e[33mYou choose upgrade...\e[0m\n' && sleep 1
-			setupVars
-			updateSoftware
-			installService
-			#installListener
-			echo -e '\n\e[33mYour node was upgraded!\e[0m\n' && sleep 1
+. $HOME/.bashrc
+. $HOME/.bash_profile
+
+mkdir -p  ~/if/backup
+
+ironfish accounts:export $IRONFISH_WALLET ~/if/backup/$IRONFISH_WALLET.json
+
+INN=$IRONFISH_NODENAME&&export INN=$INN >> $HOME/.bash_profile&&source ~/.bash_profile
+
+cd  ~/if/backup/
+
+cat  $HOME/.ironfish/config.json |  tee -a nodename_graffiti.txt  &&echo $INN&&echo "Success!!!"&&cat   ~/if/backup/$IRONFISH_WALLET.json
+cp /etc/systemd/system/ironfishd-miner.service /etc/systemd/system/ironfishd-miner1.service
+setupVars
+updateSoftware
+installService
+#installListener
+echo -e '\n\e[33mYour node was upgraded!\e[0m\n' && sleep 1
+cp /etc/systemd/system/ironfishd-miner1.service /etc/systemd/system/ironfishd-miner.service
 #			break
 #            ;;
 #        "Upgrade (beta)")
